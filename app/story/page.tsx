@@ -103,10 +103,10 @@ const LEDGER_ENTRIES: LedgerEntry[] = [
     id: "competitions",
     year: "2025–26",
     title: "National Business Plan & Case Competitions",
-    organization: "4x National Awardee & Semifinalist",
+    organization: "4x National Awardee & Semifinalist (Joined 8+ competitions)",
     category: "data",
     categoryLabel: "Data & BI",
-    impactMetric: "4x Winner · Beat 120+ Teams",
+    impactMetric: "Beat 120+ Teams",
     summary:
       "Formulated commercial strategies, financial projections, and data-backed market analyses across four national university competitions—combining quantitative market sizing with actionable product positioning.",
     tools: ["Market Sizing", "Unit Economics", "Commercial Strategy"],
@@ -176,7 +176,7 @@ const LEDGER_ENTRIES: LedgerEntry[] = [
     organization: "SMP Negeri 4 Kuningan",
     category: "software",
     categoryLabel: "Software Eng",
-    impactMetric: "100+ Active Students",
+    impactMetric: "200+ Active Students",
     summary:
       "Developed a web-based e-library platform for 100+ students, integrating the Google Books API to index and serve free public-domain reading materials.",
     tools: ["Web Development", "Google Books API", "REST Integration"],
@@ -185,7 +185,6 @@ const LEDGER_ENTRIES: LedgerEntry[] = [
 
 export default function StoryPage() {
   const [selectedCategory, setSelectedCategory] = useState<Category>("all");
-  // Default: open the top 2 flagship projects so visitors immediately see depth
   const [expandedIds, setExpandedIds] = useState<Record<string, boolean>>({
     olist: true,
     recircle: true,
@@ -263,7 +262,7 @@ export default function StoryPage() {
                   Education
                 </span>
                 <span className="font-medium text-right">
-                  IPB University (D4 Software Eng, &apos;28)
+                  IPB University (D4 Software Eng, &apos;24)
                 </span>
               </div>
               <div className="py-3 flex justify-between gap-4">

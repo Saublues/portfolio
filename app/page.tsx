@@ -128,9 +128,12 @@ export default function Home() {
 
           {/* Letters of SAUSAN */}
           <h1
-            aria-label="SAUSAN"
+            aria-label="Sausan Asma' Mufiidah"
             className="text-[22vw] sm:text-[16vw] md:text-[16.5vw] lg:text-[17vw] scale-y-[1.15] sm:scale-y-100 font-bold tracking-[-0.04em] leading-none text-[var(--text-primary)] text-center flex justify-center items-baseline"
           >
+            <span className="sr-only">
+              Sausan Asma&apos; Mufiidah &mdash; Full-Stack Software Engineer &amp; Data Analyst Portfolio
+            </span>
             {lettersData.map((item, idx) => {
               const isHovered = activeIdx === idx;
               return (

@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import { Navbar } from "@/components/Navbar";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Get in touch with Sausan Asma' Mufiidah for software engineering, data analytics, and business intelligence opportunities.",
+};
 
 export default function ChatPage() {
   return (
