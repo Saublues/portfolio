@@ -24,7 +24,12 @@ export function CustomCursor() {
     const updatePointerType = () => setIsDesktop(mediaQuery.matches);
     updatePointerType();
 
-    mediaQuery.addEventListener("change", updatePointerType);
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", updatePointerType);
+    } else if ("addListener" in mediaQuery) {
+      // iOS Safari fallback
+      (mediaQuery as any).addListener(updatePointerType);
+    }
 
     const checkElementAtPoint = (target: HTMLElement | null) => {
       if (!target) return;
@@ -51,7 +56,7 @@ export function CustomCursor() {
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
-      if (!isVisible) setIsVisible(true);
+      setIsVisible(true);
       checkElementAtPoint(e.target as HTMLElement | null);
     };
 
@@ -72,7 +77,11 @@ export function CustomCursor() {
     document.documentElement.addEventListener("mouseenter", handleMouseEnter);
 
     return () => {
-      mediaQuery.removeEventListener("change", updatePointerType);
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener("change", updatePointerType);
+      } else if ("removeListener" in mediaQuery) {
+        (mediaQuery as any).removeListener(updatePointerType);
+      }
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseover", handleMouseOver);
       window.removeEventListener("mousedown", handleMouseDown);
@@ -80,7 +89,7 @@ export function CustomCursor() {
       document.documentElement.removeEventListener("mouseleave", handleMouseLeave);
       document.documentElement.removeEventListener("mouseenter", handleMouseEnter);
     };
-  }, [mouseX, mouseY, isVisible]);
+  }, [mouseX, mouseY]);
 
   if (!isDesktop) return null;
 

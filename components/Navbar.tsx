@@ -43,11 +43,8 @@ export function Navbar() {
 
   return (
     <>
-      <motion.header
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed top-5 left-1/2 -translate-x-1/2 z-50 pointer-events-auto"
+      <header
+        className="fixed top-[max(1rem,env(safe-area-inset-top))] sm:top-5 left-1/2 -translate-x-1/2 z-50 pointer-events-auto max-w-[calc(100vw-1rem)]"
       >
         <nav
           aria-label="Main Navigation"
@@ -169,13 +166,10 @@ export function Navbar() {
             })}
           </div>
         </nav>
-      </motion.header>
+      </header>
 
       {/* Standalone Desktop Work Pill Button (Anton & Irene style - Fixed Top-Right) */}
-      <motion.div
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+      <div
         className="fixed top-5 right-6 sm:right-8 z-50 hidden md:block pointer-events-auto"
       >
         <button
@@ -189,7 +183,7 @@ export function Navbar() {
         >
           <span>{isWorkOpen ? "✕ Close" : "Work"}</span>
         </button>
-      </motion.div>
+      </div>
 
       {/* Anton & Irene Full-Screen Work Drawer & Case Study Overlay */}
       <WorkDrawerOverlay

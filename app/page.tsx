@@ -175,7 +175,7 @@ export default function Home() {
           >
             <span className="relative z-10">View Resume</span>
             <span className="relative z-10 font-mono text-sm opacity-60 group-hover:opacity-100 transition-opacity">
-              ↗
+              &#8599;
             </span>
             {/* Subtle hover sweep effect */}
             <div className="absolute inset-0 bg-white/10 dark:bg-black/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
