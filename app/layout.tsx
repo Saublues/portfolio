@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "google9d9cd00a76c9106c",
+    google: "X1m0D4Ap1V1aBHA1CdVXGLOLsXKfjqPJOUMsr_w1eLQ",
   },
 };
 
@@ -120,6 +120,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta
+          name="google-site-verification"
+          content="X1m0D4Ap1V1aBHA1CdVXGLOLsXKfjqPJOUMsr_w1eLQ"
+        />
         <link
           rel="stylesheet"
           href="https://fonts.cdnfonts.com/css/helvetica-neue-5"
